@@ -23,6 +23,10 @@ else
     exit 1
 fi
 
+if [ -f /etc/kafka/env.sh ];then
+    . /etc/kafka/env.sh
+fi
+
 DISTRIB_ID=`lsb_release -i -s 2>/dev/null`
 
 NAME="$(basename $0)"
